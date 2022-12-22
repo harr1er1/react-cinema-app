@@ -1,19 +1,43 @@
-import React from 'react'
+import React from 'react';
 
-const ModalLogin = ({closeModal, openRegistration}) => {
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-  return (
-    <div className='dimming-block'>
-                        <div className='registration-block'>
+const ModalLogin = ({closeModal, openRegistration, loginModal}) => {
+
+    const [email, setEmail] = React.useState('');
+    const [pass, setPass] = React.useState('');
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, pass)
+            .then(console.log)
+            .catch(console.error)
+    }
+
+  return (<div className='dimming-block'>
+                        <div ref={loginModal} className='registration-block'>
                             <div onClick={closeModal} className='closeForm'>x</div>
                             <h3>Войти</h3>
                             <form>
                                 <label>Почта</label>
-                                <input placeholder='Email...'/>
+                                <input
+                                    type="email" 
+                                    placeholder='Email...'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 <label>Пароль</label>
-                                <input placeholder='******'/>
+                                <input
+                                    type="password" 
+                                    placeholder='******'
+                                    value={pass}
+                                    onChange={(e) => setPass(e.target.value)}
+                                    />
                                 <div className='buttons'>
-                                    <div>Войти</div>
+                                    <div
+                                        onClick={handleLogin}
+                                    >Войти</div>
                                     <div onClick={openRegistration}>Регистрация</div>
                                 </div>
                             </form>

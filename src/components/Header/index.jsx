@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {getAuth, createUserWithEmailAndPassword} from  "firebase/auth";
 
 import logo from '../../assets/img/ico/logo.svg';
 import avatar from '../../assets/img/ico/ava_temp1.svg';
@@ -12,11 +11,27 @@ import ModalRegistration from '../ModalRegistration';
 const Header = () => {
     const [isOpenLogin, setIsOpenLogin] = React.useState(false);
     const [isOpenRegistration, setIsOpenRegistration ] = React.useState(false);
+    const modalRef = React.useRef();
 
     const clickRegistration = () => {
         setIsOpenLogin(false);
         setIsOpenRegistration(true);
     }
+
+
+    React.useEffect(() => {
+        const clickOutsideModal = (event) => {
+            if(!event.path.includes(modalRef.current)){
+                //доделать
+            }
+        };
+
+        document.body.addEventListener('click', clickOutsideModal);
+
+        return() => {
+            document.body.removeEventListener('click', clickOutsideModal);
+        }
+    }, []);
     
 
   return (<header>
@@ -33,7 +48,7 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className="right">
-                        <div onClick={() => setIsOpenLogin(true)} className="reg-button">
+                        <div onClick={() => setIsOpenLogin(!isOpenLogin)} className="reg-button">
                             <p className="text-active">
                                 Войти
                             </p>
@@ -41,12 +56,14 @@ const Header = () => {
                                 <img src={avatar} alt=""/>
                             </div>
                         </div>
-                    {isOpenLogin ? <ModalLogin 
+                        {isOpenLogin ? <ModalLogin 
                                 closeModal={() => setIsOpenLogin(false)}
                                 openRegistration={() => clickRegistration()}
+                                loginModal={modalRef}
                                         /> : ''}
                                         {isOpenRegistration ? <ModalRegistration
                                             closeModal={() => setIsOpenRegistration(false)}
+                                            registrationModal={modalRef}
                                         /> : ''}
                 </div>
         </header>

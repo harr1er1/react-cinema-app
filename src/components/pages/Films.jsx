@@ -1,51 +1,46 @@
 import React from 'react';
+import { getDatabase, ref, child, get } from "firebase/database";
+import { getStorage, ref as refPhoto, getDownloadURL, listAll} from "firebase/storage";
+// import { Link } from 'react-router-dom';
 
-import Pagination from '../Pagination/index';
-
-import Film from '../FilmsBlock/index';
-
-let filmLimit = [];
-
-// import * as firebase from 'firebase';
+import Film from '../FilmBlock/index';
 
 const Films = () => {
-    const [getFilms, setGetFilms] = React.useState([]);
-    const [getAllGenres, setGetAllGenres] = React.useState([]);
-    const [getGenres, setGetGenres] = React.useState([]);
-    const [currentPage, setCurrentPage] = React.useState(1);
     const [searchValue, setSearchValue] = React.useState('');
-
-    // const db = firebase.database();
-    // console.log(db);
-    
-    const onClickFilm = (id) =>{
-      console.log(getFilms.find((obj) => obj.id_film === id))
-    }
-    
+    const [films, setFilms] = React.useState([]);
+    const [urlImage, setUrlImage] = React.useState([]);
 
     React.useEffect(() => {
-    fetch('http://localhost/getFilm.php')
-      .then((res) => res.json())
-      .then((data)=> data.filter(item => searchValue && item.film_name.toLowerCase().includes(searchValue.toLowerCase())).map((obj, i) => { 
-        if(i >= (currentPage-1)*4 && i < (currentPage*4)){
-          filmLimit.push(obj)
-        }
-      }))
+      async function fetchData() {
+          try{
+              const dbRef = ref(getDatabase());
+              const storageRef = getStorage();
+              const mas = []
 
-      filmLimit.splice(0, filmLimit.length)
-    }, [currentPage, searchValue])
+              const reference = refPhoto(storageRef, 'films');
+              listAll(reference).then((res) => {
+                res.items.forEach((itemRef) => {
+                getDownloadURL(itemRef).then((url) => {
+                  mas.push(url)
+                  setUrlImage(mas)
+                  })
+                })
+              })
 
-    React.useEffect(() => {
-    fetch('http://localhost/getFilmGenre.php')
-      .then((res) => res.json())
-      .then((data)=> {(setGetAllGenres(data))})
-    }, [])
+              get(child(dbRef, "films")).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    setFilms(snapshot.val());  
+                  } else {
+                    console.log("No data available");
+                  }
+              })
+            } catch(error){
+              console.error(error);
+            }
+      }
 
-    React.useEffect(() => {
-    fetch('http://localhost/getGenres.php')
-      .then((res) => res.json())
-      .then((data)=> setGetGenres(data))
-    }, [])
+      fetchData();
+  }, [])
 
   return (<div className="film">
             <div className="active-film">
@@ -58,19 +53,23 @@ const Films = () => {
               {searchValue && <div onClick={() => setSearchValue('')}>X</div>}
             </div>
                 <div className='group-film'>
-                {filmLimit.map((film) =>
-                  <Film 
-                    key={film.id_film}
-                    allGenres={getAllGenres}
-                    genres={getGenres}
-                    film = {film}
-                    onClickFilm={onClickFilm}
-                  />
-      )}
+                {
+                  films.filter((obj) => obj.film_name.toLowerCase().includes(searchValue.toLowerCase())).map((obj, id) =>
+                  (urlImage.map((imgUrl) => {
+                    if(obj.poster === imgUrl){
+                      return(<Film 
+                        key={id}
+                        {...obj}
+                      />)
+                    }
+                  }
+                  )
+                  ))
+                }
                 </div>
 
         <div className='pagination-block'>
-            <Pagination onChangePage={(number) => setCurrentPage(number)}/>
+            {/* <Pagination onChangePage={(number) => setCurrentPage(number)}/> */}
         </div>
 
 

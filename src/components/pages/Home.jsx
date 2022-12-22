@@ -120,7 +120,7 @@ const Home = () => {
             На карте
         </div>
         <div className="map">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6c9063bd0937600e148bd5f7fbdd42d9a960c936c21caf60d25bbf17993d387f&amp;width=452&amp;height=383&amp;lang=en_FR&amp;scroll=true"></script>
+            {/* <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6c9063bd0937600e148bd5f7fbdd42d9a960c936c21caf60d25bbf17993d387f&amp;width=452&amp;height=383&amp;lang=en_FR&amp;scroll=true"></script> */}
         </div>
     </div>
 </div>
