@@ -56,7 +56,6 @@ header{
             height: 50px;
         }
     } 
-
     
     nav{
         display: flex;
@@ -97,6 +96,94 @@ header{
                     margin: auto auto;
                 }
             }
+
+        }
+
+        .ico{
+            margin: auto auto;
+        }
+        
+        .back-ico-user{
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 10px;
+        }
+        
+        .ico-user{
+            margin: auto auto;
+            border-radius: 50%;
+            border: 2px solid #494949;
+            width: 35;
+            height: 35;
+        }
+        
+        .admin-panel{
+            display: flex;
+            margin-right: 60px;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .ico-menu{
+            width: 50px;
+            height: 50px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .admin-panel-menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            ul{
+                list-style: none;
+            }
+        }
+        
+
+        .test:hover {
+            .admin-menu{
+                overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            }
+        }
+        
+        .admin-menu{
+            position: absolute;
+            width: 250px;
+            height: 230px;
+            box-shadow: 0 0 5px 0 #333333;
+            background-color: #323231;
+            border-radius: 5px;
+            margin-top: 2px;
+            z-index: 100;
+            transition: all 0.6s;
+            overflow: visible;
+            visibility: visible;
+            opacity: 1;
+
+            li{
+                height: 30px;
+                display: flex;
+                margin: 5px 0;
+            }
+
+            li:hover{
+                background-color: rgba(221, 221, 221, 0.089);
+            }
+
+            a{
+                margin: auto 0;
+            }
+        }
+        
+        .adm-line{
+            width: 80%;
+            height: 1px;
+            background-color: #A5A5A5;
         }
 
         .dimming-block{
@@ -186,6 +273,18 @@ header{
     }
 
 
+}
+
+
+@media (max-width: 925px) {
+    header{
+        .logo{
+            margin-left: 80%;
+        }
+        nav{
+            display: none;
+        }
+    }
 }
 
 
@@ -662,26 +761,26 @@ details{
 //     }
 // }
 
-//   /* свойства для кнопки "Закрыть" */
-//   .close {
-//     float: right;
-//     font-family: sans-serif;
-//     font-size: 24px;
-//     font-weight: 700;
-//     line-height: 1;
-//     color: rgb(255, 255, 255);
-//     opacity: .5;
-//     text-decoration: none;
-//   }
+  /* свойства для кнопки "Закрыть" */
+  .close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    opacity: .5;
+    text-decoration: none;
+  }
 
-//   /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
-//   .close:focus,
-//   .close:hover {
-//     color: rgb(255, 255, 255);
-//     text-decoration: none;
-//     cursor: pointer;
-//     opacity: .75;
-//   }
+  /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+  .close:focus,
+  .close:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+  }
 
 // .buttons{
 //     display: flex;
@@ -764,8 +863,10 @@ form{
 }
 
 .active-film{
-    margin: 50px 30px;
-    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+    width: 95%;
 
     .search-input{
         display: flex;
@@ -775,7 +876,6 @@ form{
         input{
             border: 1px solid rgba(0, 0,0, 0.1);
             border-radius: 10px;
-            width: 20%;
             height: 30px;
             font-size: 16px;
         }
@@ -790,6 +890,11 @@ form{
         }
     
     }
+}
+
+.active-film-buy{
+    margin: 80px 30px;
+    width: 1400px; 
 }
 
 .group-film{
@@ -912,171 +1017,170 @@ form{
     text-align: center;   
 }
 
-// /*оформление билета*/
+/*оформление билета*/
 
-// .buy{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     height: auto;
-//     flex-wrap: wrap;
-// }
+.buy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
 
-// .reg-form{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     background-color: #323231;
-//     border-radius: 15px;
-//     width: 600px;
-//     color: white;
-//     margin-left: auto;
-//     margin-right: 80px;
-// }
+.reg-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #323231;
+    border-radius: 15px;
+    width: 600px;
+    color: white;
+    margin-left: auto;
+    margin-right: 80px;
+}
 
-// .reg-title{
-//     font-size: 32px;
-//     text-align: center;
-//     margin-top: 31px;
-//     margin-bottom: 23px;
-// }
+.reg-title{
+    font-size: 32px;
+    text-align: center;
+    margin-top: 31px;
+    margin-bottom: 23px;
+}
 
-// .buy-select{
-//     -moz-appearance: none;
-//     -webkit-appearance: none;
-//     border: none;
-//     position: relative;
-//     outline: none;
-//     padding: 5px;
-//     padding-right: 40px;
-//     background: url(../../assets/img/ico/arrow-down-white.png);
-//     background-position: right 13px top 50%;
-//     background-size: 15px;
-//     background-repeat: no-repeat;
-//     color: white;
-//     font-size: 19px;
-// }
+.buy-select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    position: relative;
+    outline: none;
+    padding: 5px;
+    padding-right: 40px;
+    background: url(../../assets/img/ico/arrow-down-white.png);
+    background-position: right 13px top 50%;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 19px;
+}
 
-// option{
-//     background-color: #4D4A4A;
-//     font-size: 15px;
-//     color: white;
-// }
+option{
+    background-color: #4D4A4A;
+    font-size: 15px;
+    color: white;
+}
 
-// .first-block{
-//     font-size: 21px;
-//     margin-bottom: 35px;   
-// }
+.first-block{
+    font-size: 21px;
+    margin-bottom: 35px;   
+}
 
-// .reg-table-title{
-//     display: flex;
-//     margin-bottom: 35px;
-// }
+.reg-table-title{
+    display: flex;
+    margin-bottom: 35px;
+}
 
-// .reg-duration{
-//     display: flex;
-//     margin-right: auto;
-// }
+.reg-duration{
+    display: flex;
+    margin-right: auto;
+}
 
-// .reg-duration-1{
-//     display: flex;
-//     margin-right: auto;
-// }
+.reg-duration-1{
+    display: flex;
+    margin-right: auto;
+}
 
-// .reg-date{
-//     display: flex;
-//     width: 230px;
-//     height: 35px;
-//     background-color: #4D4A4A;
-//     border-radius: 9px;
-//     margin-left: 9px;
-//     margin-right: 9px;
-//     margin-bottom: 35px;
-// }
+.reg-date{
+    display: flex;
+    width: 230px;
+    height: 35px;
+    background-color: #4D4A4A;
+    border-radius: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-bottom: 35px;
+}
 
-// .line-cinema{
-//     display: flex;
-//     margin-top: 20px;
-//     margin-bottom: 20px;
-//     justify-content: center;
-//     align-items: center;
-//     width: 520px;
-// }
+.line-cinema{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+}
 
-// .l-text{
-//     margin-left: 30px;
-//     margin-right: 30px;
-//     margin-top: auto;
-//     margin-bottom: auto;
-//     font-size: 27px;
-// }
+.l-text{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 27px;
+}
 
-// .place-block{
-//     background-color: #4C4A4A;
-//     margin-left: auto;
-//     margin-right: auto;
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     height: 500px;
-//     border-radius: 10px;
-// }
+.place-block{
+    background-color: #4C4A4A;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
 
-// .help-panel{
-//     display: flex;
-//     justify-content: center;
-//     font-size: 17px;
-//     margin-top: 15px;
-// }
+.help-panel{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    margin-top: 15px;
+}
 
-// .h-p-cell{
-//     display: flex;
-//     margin-right: 20px;
-//     margin-left: 20px;
-// }
+.h-p-cell{
+    display: flex;
+    margin-right: 20px;
+    margin-left: 20px;
+}
 
-// .radio-ex{
-//     width: 15px;
-//     height: 15px;
-//     border-radius: 100%;
-//     margin-right: 10px;
-// }
+.radio-ex{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
 
-// .c-blue{
-//     background-color: #2E91D9;
-// }
+.c-blue{
+    background-color: #2E91D9;
+}
 
-// .c-red{
-//     background-color: #E84545;
-// }
+.c-red{
+    background-color: #E84545;
+}
 
-// .c-grey{
-//     background-color: #A5A5A5;
-// }
+.c-grey{
+    background-color: #A5A5A5;
+}
 
-// .ticket-place{
-//     display: flex;
-//     justify-content: center;
-//     font-size: 17px;
-//     margin-top: 15px;
-// }
+.ticket-place{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    margin-top: 15px;
+}
 
-// input[type=radio]
-// {
-//     width: 20px;
-//     height: 20px;
-//     margin-left: 10px;
-//     margin-right: 10px;
-// }
+input[type=radio]
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-// .t-row{
-//     display: flex;
-//     flex-direction: column;
-// }
+.t-row{
+    display: flex;
+    flex-direction: column;
+}
 
-// .t-cell{
-//  display: flex;
-// }
+.t-cell{
+ display: flex;
+}
 
 // /*Оформление билета на фильм не в прокате*/
 
@@ -1319,10 +1423,4 @@ form{
 .g:hover{
     color: red;
     transition: color 0.3s;
-}
-
-.test{
-    width: 330px;
-    height: 240px;
-    padding: 100px 0px;
 }

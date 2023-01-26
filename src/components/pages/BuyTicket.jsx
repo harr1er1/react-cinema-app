@@ -1,16 +1,57 @@
-import React from 'react'
+import { useParams } from 'react-router-dom';
+import React from 'react';
+import { getDatabase, ref, child, get } from "firebase/database";
+import { getStorage, ref as refPhoto, getDownloadURL, listAll} from "firebase/storage";
 
-const FilmBuy = () => {
+const BuyTicket = () => {
+    const {id} = useParams();
+    const [film, setFilm] = React.useState([]);
+    const [urlImage, setUrlImage] = React.useState([]);
+
+    React.useEffect(() => {
+        async function fetchData() {
+            try{
+                const dbRef = ref(getDatabase());
+                const storageRef = getStorage();
+                const mas = []
+  
+                const reference = refPhoto(storageRef, 'films');
+                listAll(reference).then((res) => {
+                  res.items.forEach((itemRef) => {
+                  getDownloadURL(itemRef).then((url) => {
+                    mas.push(url)
+                    setUrlImage(mas)
+                    })
+                  })
+                })
+  
+                get(child(dbRef, "films")).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        setFilm(snapshot.val().find((obj)=> Number(obj.id_film) === Number(id))) 
+                    } else {
+                      console.log("No data available");
+                    }
+                })
+              } catch(error){
+                console.error(error);
+              }
+        }
+  
+        fetchData();
+    }, [])
   return (
     <div className="buy">
-                <div className="active-film">
+                <div className="active-film-buy">
                     <div className="active-film-block-1">
                         <div className="af-photo">
-                            <img className="af-photo" src="" alt=""/>
+                            <img className="af-photo" src={urlImage.find((obj) => film.poster === obj)
+
+
+                            } alt=""/>
                         </div>
                         <div className="af-block-text">
                             <div className="af-title">
-                                {/* film name */}
+                                {film.film_name}
                             </div>
                             <div className="af-block-info">
                                 <div className="af-row">
@@ -26,7 +67,7 @@ const FilmBuy = () => {
                                         Страна:
                                     </div>
                                     <div className="af-cell-info">
-                                        {/* страна */}
+                                        {film.country}
                                     </div>
                                 </div>
                                 <div className="af-row">
@@ -34,7 +75,7 @@ const FilmBuy = () => {
                                         Режисер:
                                     </div>
                                     <div className="af-cell-info">
-                                        {/* режисер */}
+                                        {film.director}
                                     </div>
                                 </div>
                                 <div className="af-row">
@@ -42,7 +83,7 @@ const FilmBuy = () => {
                                         Возраст:
                                     </div>
                                     <div className="af-cell-info">
-                                         {/*возраст */} +
+                                         {film.age} +
                                     </div>
                                 </div>
                                 <div className="af-row">
@@ -50,7 +91,7 @@ const FilmBuy = () => {
                                         Длительность:
                                     </div>
                                     <div className="af-cell-info">
-                                         {/* длительность */} минуты
+                                         {film.duration} минуты
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +100,7 @@ const FilmBuy = () => {
                                 Описание
                             </div>
                             <div className="af-description">
-                                {/* описание */}
+                                {film.description}
                             </div>
                         </div>
                     </div>
@@ -112,4 +153,4 @@ const FilmBuy = () => {
   )
 }
 
-export default FilmBuy;
+export default BuyTicket;

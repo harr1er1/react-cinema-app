@@ -9,7 +9,7 @@ const ModalRegistration = ({closeModal, registrationModal}) => {
     const [email, setEmail] = React.useState('');
     const [pass, setPass] = React.useState('');
     const [secondPass, setSecondPass] = React.useState('');
-    const [name, setName] = React.useState('');
+    const [nick, setNick] = React.useState('');
 
     const handleRegistration = () => {
         if(pass === secondPass){
@@ -20,7 +20,8 @@ const ModalRegistration = ({closeModal, registrationModal}) => {
                     email: user.email,
                     id: user.uid,
                     token: user.accessToken,
-                }))
+                    nick: nick,
+                }));
                 closeModal();
             })
             .catch(console.error)
@@ -46,8 +47,8 @@ const ModalRegistration = ({closeModal, registrationModal}) => {
                                 <input 
                                     placeholder='Nickname'
                                     type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    value={nick}
+                                    onChange={(e) => setNick(e.target.value)}
                                     />
                                 <label>Пароль</label>
                                 <input 

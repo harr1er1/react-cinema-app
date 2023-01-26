@@ -5,7 +5,7 @@ const Film = ({id_film, film_name, country, director, description, duration, age
   return (
     
     <div className="active-film-block">
-        <Link to='/' title="Нажмите чтобы приобрести билет" className="af-photo">
+        <Link to={`/film/${id_film}`} title="Нажмите чтобы приобрести билет" className="af-photo">
             <img className="af-photo" src={poster} alt=""/>
         </Link>
         <div className="af-block-text">

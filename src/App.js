@@ -9,7 +9,7 @@ import Genres from './components/pages/Genres';
 import Profile from './components/pages/Profile';
 import Footer from "./components/Footer";
 import Films from "./components/pages/Films";
-import Film from "./components/pages/Film";
+import BuyTicket from "./components/pages/BuyTicket";
 
 
 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/genres" element={<Genres />}></Route>
         <Route path="/films" element={<Films />}></Route>
-        <Route path="/films/film/:id" element={<Film />}/>
+        <Route path="/film/:id" element={<BuyTicket />}/>
         <Route path="/profile" element={<Profile />}></Route>
       </Routes>
   </div>

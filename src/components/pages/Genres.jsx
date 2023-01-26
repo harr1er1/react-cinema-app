@@ -3,7 +3,6 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import { getStorage, ref as refPhoto, getDownloadURL, listAll} from "firebase/storage";
 
 import GenreCard from '../GenreCard';
-import { Outlet } from 'react-router-dom';
 
 
 
