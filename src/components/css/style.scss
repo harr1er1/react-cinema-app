@@ -1,0 +1,1970 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #231F1F;
+    font-family: 'Almarai', sans-serif;
+}
+
+*{
+    font-family: 'Almarai', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/*Шапка*/
+
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    color: white;
+    box-shadow: 0 0 5px 0 #333333;
+    background-color: #323231;
+    height: 60px;
+    width: 100%;  
+
+    .text-active:after{
+        background-color: #ffffff; 
+        display: block;
+        content: "";
+        height: 1.6px;
+        width: 0%;
+        transition: width .4s ease-in-out;
+    }
+      
+    .text-active:hover::after,
+    .text-active:focus::after{
+        width: 100%;
+    } 
+
+    .logo{
+        margin-left: 120px;
+        img{
+            width: 100px;
+            height: 50px;
+        }
+    } 
+    
+    nav{
+        display: flex;
+
+        ul {
+            margin-top: auto;
+            margin-bottom: auto;
+            list-style: none;
+
+            li{
+                display: inline-block;
+                margin-right: 40px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .right{
+        display: flex;
+        margin: auto 100px auto auto;
+    
+        .reg-button{
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+    
+            .back-avatar{
+                display: flex;
+                background-color: #494949;
+                border-radius: 100%;
+                width: 35px;
+                height: 35px;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: 10px;
+            
+                .img{
+                    margin: auto auto;
+                }
+            }
+
+        }
+
+        .ico-menu{
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: auto 0 auto 10px;
+        }
+
+        .ico{
+            margin: auto auto;
+        }
+        
+        .back-ico-user{
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 10px;
+        }
+        
+        .ico-user{
+            margin: auto auto;
+            border-radius: 50%;
+            border: 2px solid #494949;
+            width: 35;
+            height: 35;
+        }
+        
+        
+        
+        .adaptive-navigation{
+            position: absolute;
+            margin: 70px 0px;
+            padding: 10px 20px;
+            box-shadow: 0 0 5px 0 #333333;
+            background-color: #323231;
+            border-radius: 5px;
+            z-index: 100;
+            transition: all 0.6s;
+
+            ul{
+                list-style: none;
+                margin: 0px;
+                padding-inline-start: 0px;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+            }
+
+            li{
+                height: 30px;
+                display: flex;
+                margin: 5px 0;
+            }
+
+            li:hover{
+                background-color: rgba(221, 221, 221, 0.089);
+            }
+
+            a{
+                margin: auto 0;
+            }
+        }
+        
+        .adm-line{
+            width: 80%;
+            height: 1px;
+            background-color: #A5A5A5;
+        }
+
+        .dimming-block{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 65px;
+            position: fixed;
+
+
+            .registration-block{
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                background-color: #323231;
+                border-radius: 13px;
+    
+                .closeForm{
+                    width: 20px;
+                    height: 20px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    opacity: 0.5;
+                    margin: 0px 5px 0px auto;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+    
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+    
+                h3{
+                    text-align: center;
+                }
+    
+                form{
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin: 10px 50px;
+                    }
+    
+                    input{
+                        width: 80%;
+                        margin: 10px auto;
+                        height: 25px;
+                        background-color: #4C4A4A;
+                        border-radius: 5px;
+                        border: none;
+                        font-size: 14px;
+                    }
+
+                    .checkbox{
+                        margin: 10px auto;
+                            .custom-input{
+                            all: revert;
+                            margin: 10px auto;                        
+                        }
+                    }
+    
+                    .buttons{
+                        display: flex;
+                        align-self: center;
+    
+                        div{
+                            border-radius: 5px;
+                            background-color: #4C4A4A;
+                            cursor: pointer;
+                            width: 100%;
+                            padding: 7px 10px;
+                            margin: 30px 20px 50px 20px;
+                        }
+                    }
+
+                    .checkbox{
+                        display: flex;
+                    }
+                }
+            }
+
+            .login-block{
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                background-color: #323231;
+                border-radius: 13px;
+    
+                .closeForm{
+                    width: 20px;
+                    height: 20px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    opacity: 0.5;
+                    margin: 0px 5px 0px auto;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+    
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+    
+                h3{
+                    text-align: center;
+                }
+    
+                form{
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin: 10px 50px;
+                    }
+    
+                    input{
+                        width: 80%;
+                        margin: 10px auto;
+                        height: 25px;
+                        background-color: #4C4A4A;
+                        border-radius: 5px;
+                        border: none;
+                        font-size: 14px;
+                    }
+
+                    .checkbox{
+                        margin: 10px auto;
+                            .custom-input{
+                            all: revert;
+                            margin: 10px auto;                        
+                        }
+                    }
+    
+                    .buttons{
+                        display: flex;
+                        align-self: center;
+    
+                        div{
+                            border-radius: 5px;
+                            background-color: #4C4A4A;
+                            cursor: pointer;
+                            width: 100%;
+                            padding: 7px 10px;
+                            margin: 30px 20px 50px 20px;
+                        }
+                    }
+
+                    .checkbox{
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media (max-width: 925px) {
+    header{
+        .logo{
+            margin-left: 80%;
+        }
+        nav{
+            display: none;
+        }
+
+        .right{
+            .ico-menu{
+                display:block;
+            }
+        }
+    }
+}
+
+
+// ************************************************
+
+/*Банер*/
+.banner{
+    width: 90%;
+    margin: 95px auto 35px auto;
+    background-image: url(../../assets/img/background/banner.jpeg);
+    background-size: cover;
+    border-radius: 13px;
+    max-width: 1205px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    .banner-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 30px;
+        margin: 44px 50px 0 50px;
+    
+        .title-header{
+            font-size: 64px;
+        }
+        
+        .title-subtitle{
+            margin-top: 13px;
+            font-size: 40px;
+        }
+    }
+
+    .circle{
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+        border-radius: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.71);
+        box-sizing: border-box;
+        
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .banner-footer{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding: 0 100px;
+    
+        .left-ft{
+            display: flex;
+            margin-top: 180px;
+        }
+        
+        .right-ft{
+            display: flex;
+            margin-top: 180px;
+        }
+        
+        .text-ft{
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 0 30px;
+            font-size: 26px;
+        
+            .city{
+                font-size: 15px;
+                color: rgba(255, 255, 255, 0.39);
+            }
+        
+            .city-tub{
+                text-align: right;
+            }
+        }
+    }
+}
+
+// ************************************************
+
+/*Разделитель*/
+
+.split{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+    .line-text{
+        color: white;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .line{
+    width: 40%;
+    height: 0.5px;
+    background-color: #E0E0E0;
+}
+}
+
+// ************************************************
+
+/*О кинотеатре*/
+
+.info{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 20px 140px;
+
+    div{
+
+        display: flex;
+        .back-info{
+            width: 540px;
+            height: 100%;
+            background-size: cover;
+            background-image: url(../../assets/img/background/poster_about_black.jpg);
+        }
+    }
+
+    .info-text{
+        display: flex;
+        flex-direction: column;
+        margin-left: 44px;
+        width: 60%;
+    
+        .text-title{
+            font-size: 24px;
+            margin-top: 30px;
+        }
+    
+        .text-subtitle{
+            font-size: 16px;
+            margin-top: 15px;
+            line-height: 25px;
+            margin-left: 40px;
+        }
+    }
+    
+    .t-t-2{
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    
+    .t-list li{
+        margin-top: 13px;
+    }
+    
+}
+
+
+
+/*Галерея*/
+
+ .wrapper {
+	width: 50%;
+    margin: 50px auto 70px auto;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+/*
+.slider {
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	-o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.slides {
+    border-radius: 5px;
+    background-size: cover;
+	height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slide1 { background-image: url(./photo/1.jpeg); }
+.slide2 { background-image: url(./photo/2.jpeg); }
+.slide3 { background-image: url(./photo/3.jpeg); }
+.slide4 { background-image: url(./photo/4.jpeg); }
+.slide5 { background-image: url(./photo/5.jpeg); }
+.slide6 { background-image: url(./photo/6.jpeg); }
+.slide7 { background-image: url(./photo/7.jpeg); }
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5,
+#slide6:checked ~ .slider > .slide6,
+#slide7:checked ~ .slider > .slide7 {
+	opacity: 1;
+	z-index: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.wrapper .controls {
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transition: background ease-in-out 0.5s;
+	-moz-transition: background ease-in-out 0.5s;
+	-o-transition: background ease-in-out 0.5s;
+	transition: background ease-in-out 0.5s;
+}
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5), 
+#slide6:checked ~ .controls label:nth-of-type(6), 
+#slide7:checked ~ .controls label:nth-of-type(7)  {
+	background: #ddd;
+}
+
+.wrapper label::after {
+	border: 2px solid #ddd;
+	content: " ";
+	display: block;
+	height: 12px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 12px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+} */
+
+
+/*Контакты*/
+
+.contact-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    margin: 50px auto 0 auto;
+
+    .block-info{
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        margin: 0 10px;
+        width: 45%;
+        background-color: rgba(216,216,216,.05) ;
+
+        .block-title{
+            text-align: center;
+            padding: 5px 0;
+            color: white;
+            font-size: 25px;
+        }
+
+        .photo-block{
+
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .map{
+            margin: auto 0 0 0 ;
+            width: 50%;
+        
+            .ymaps-2-1-79-map ymaps{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+
+    }
+}
+
+/*Подвал*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.copyright{
+    margin-left: 50px;
+    color: white;
+    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+details{
+    margin-top: 50px;
+    display:flex;
+    width: 100%;
+    background-color: #323231; 
+    font-size: 16px;
+    color: white;
+    overflow:hidden;
+    
+}
+
+  summary::-webkit-details-marker{display:none;}
+  summary::-moz-list-bullet{list-style-type:none;}
+  summary::marker{display:none;} 
+  summary {
+    display:block;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: underline dotted;
+  }
+
+  summary:hover{
+      color: red;
+      transition: color .3s ease-in-out ;
+  }
+
+  summary:before {  
+    top: .4em;
+    left: .3em;
+    color: transparent;
+    width: 1em;
+    height: 1em;  
+    content: "";
+    transition: transform .5s;
+  }
+  details[open] > summary:before {
+    transform: rotateZ(90deg);
+  }
+  summary ~ * {
+     padding: 0 2em 10px 2em;
+  }
+  details[open] summary ~ *{ 
+    animation: sweep .5s ease-in-out;
+  }
+  @keyframes sweep {
+    0%    {opacity: 0;}
+    100%  {opacity: 1;}
+  }
+  summary:focus {
+    outline:5px;
+  }
+
+
+  /*Регистрация*/
+
+//   .modal {
+//       display: flex;
+//       margin-top: 60px;
+//     position: fixed;
+//     /* фиксированное положение */
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: rgba(0, 0, 0, 0.5);
+//     /* цвет фона */
+//     z-index: 1050;
+//     opacity: 0;
+//     /* по умолчанию модальное окно прозрачно */
+//     -webkit-transition: opacity 400ms ease-in;
+//     -moz-transition: opacity 400ms ease-in;
+//     transition: opacity 400ms ease-in;
+//     /* анимация перехода */
+//     pointer-events: none;
+//     /* элемент невидим для событий мыши */
+//     color: white;
+//   }
+
+  /* при отображении модального окно */
+//   .modal:target {
+//     opacity: 1;
+//     pointer-events: auto;
+//     overflow-y: auto;
+//   }
+
+//   /* ширина модального окна и его отступы от экрана */
+//   .modal-dialog {
+//     display: flex;
+//     position: relative;
+//     margin: 10px;
+//     background-color: #323231;
+//     justify-content: center;
+//     align-items: center;
+//     width: 500px;
+//     height: 300px;
+//     border-radius: 13px;
+//   }
+
+//   .modal-dialog2 {
+//     display: flex;
+//     position: relative;
+//     margin: 10px;
+//     background-color: #323231;
+//     justify-content: center;
+//     align-items: center;
+//     width: 500px;
+//     height: 450px;
+//     border-radius: 13px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// .form-1{
+//     width: 400px;
+//     height: 300px;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .form-2{
+//     width: 350px;
+//     height: 360px;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+
+//   @media (min-width: 576px) {
+//     .modal-dialog {
+//       max-width: 500px;
+//       margin: 30px auto;
+//     }
+// }
+
+  /* свойства для кнопки "Закрыть" */
+  .close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    opacity: .5;
+    text-decoration: none;
+  }
+
+  /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+  .close:focus,
+  .close:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+  }
+
+// .buttons{
+//     display: flex;
+// }
+
+// .modal-title{
+//     text-align: center;
+// }
+
+// input{
+//     margin-top: 10px;
+//     width: 100%;
+//     height: 25px;
+//     margin-bottom: 10px;
+  
+//     vertical-align: middle;
+//     background-color: #4C4A4A;
+//     border-radius: 5px;
+  
+//     border-bottom: none;
+//     border-top: none;
+//     border-left: none;
+//     border-right: none ;
+    
+//     color: white;
+    
+//     font-size: 15px;
+// }
+
+// .unset{
+//     all: unset;
+// }
+
+// input[type=checkbox]{
+//     width: 15px;
+//     height: 15px;
+// }
+
+// .button-reg{
+//   border: none;
+//   border-radius: 5px;
+//   background-color: #4C4A4A;
+//   width: 155px;
+//   height: 27px;
+//   color: white;
+//   margin: 15px;
+// }
+
+// .sub-reg{
+//     display: flex;
+//     border: none;
+//     border-radius: 5px;
+//     background-color: #4C4A4A;
+//     width: 155px;
+//     height: 27px;
+//     color: white;
+//     margin: 15px auto;
+// }
+
+// .reg-btn{
+//     text-align: center;
+//     margin: auto;
+//     font-size: 15px;
+// }
+
+
+/*Фильмы*/
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+/*Показы*/
+
+.film{
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    padding-top: 60px;
+
+    .active-film{
+        display: flex;
+        flex-direction: column;
+    
+        .search-input{
+            display: flex;
+            justify-content: end;
+            margin: 20px 0;
+    
+            input{
+                border: 1px solid rgba(0, 0,0, 0.1);
+                border-radius: 10px;
+                height: 30px;
+                font-size: 16px;
+            }
+            div{
+                color: black;
+                font-size: 16px;
+                width: 30px;
+                height: 30px;
+                position:absolute;
+                cursor: pointer;
+                margin: 8px 0;
+            }
+        
+        }
+
+        .pagination-block{
+            display: flex;
+        }
+
+        .back-new-film{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px auto 0 auto;
+        
+            .new-film-photo{
+                width: 250px;
+                height: 360px;
+                margin-left: 20px;
+                margin-right: 20pxx;
+            }
+            
+            .new-film-name{
+                margin-top: 30px;
+                font-size: 20px;
+                text-align: center;   
+            }
+        }
+
+        .group-film{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        
+            .active-film-block{
+                display: flex;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            
+                .af-photo{
+                    width: 270px;
+                    height: 380px;
+                }
+                
+                .af-block-text{
+                    display: flex;
+                    flex-direction: column;
+                    width: 300px;
+                    margin-left: 20px;
+                    color: white;
+            
+                    .af-title{
+                        font-size: 22px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .af-block-info{
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+        
+                        .btn-trailer{
+            color: white;
+            border-radius: 10px;
+            padding: 15px 15px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4C4A4A;
+        
+            &:hover{
+                background-color: #353232;
+                color: red;
+            }
+        }
+                    
+                        .af-row{
+                            display: flex;
+                            margin-bottom: 10px;
+                        
+                            .af-cell{
+                                width: 132px;
+                                height: 17px;
+                                margin-right: 20px;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                font-size: 17px;
+                            }
+                            
+                            .af-cell-info{
+                                display: flex;
+                                width: 175px;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                font-size: 14px;
+                                word-break: normal;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
+                            
+                            .genre{
+                                text-decoration-line: underline;
+                                transition: color 0.3s;
+                                cursor: pointer;
+                            
+                                &:hover{
+                                    color: red;
+                                }
+                            }
+        
+                            .age{
+                                display: flex;
+                                flex-direction: column;
+                                align-content: flex-start;
+                                .age-target{
+                                    display: none;
+                                    position: absolute;
+                                    border-radius: 10px;
+                                    padding: 20px 20px;
+                                    margin: 25px 135px 25px 0px;
+                                    background-color: white;
+                                    color: black;
+                                    font-size: 14px;
+                                    text-align: center;
+                            
+                                    &:after {
+                                        content: ''; 
+                                        position: absolute;
+                                        bottom: 53px; 
+                                        right: 50%;
+                                        border: 10px solid transparent;
+                                        border-bottom: 10px solid white;
+                                       }
+                                }
+                            
+                                &:hover{
+                                    .age-target{
+                                        display: block;
+                                    }
+                                }
+                            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*оформление билета*/
+.active-film-buy{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    width: 97%;
+    color: white;
+
+    .group-film{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+
+        .active-film-block{
+        display: flex;
+        margin-bottom: 20px;
+        flex-direction: column;
+
+        .af-description-title{
+            display: flex;
+            margin-left: 20px;
+            font-size: 20px;
+        
+            .af-description-line{
+                background-color: red;
+                width: 4px;
+                height: 24px;
+                margin-right: 10px;
+            }
+        }
+        
+        .af-description{
+            font-size: 10px;
+            margin-top: 10px;
+        }
+    
+        .af-photo{
+            width: 270px;
+            height: 380px;
+        }
+        
+        .af-block-text{
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            color: white;
+
+            .btn-trailer{
+                color: white;
+                border-radius: 10px;
+                padding: 15px 15px;
+                text-align: center;
+                cursor: pointer;
+                background-color: #4C4A4A;
+            
+                &:hover{
+                    background-color: #353232;
+                    color: red;
+                }
+            }
+    
+            .af-title{
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            
+            .af-block-info{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                .btn-trailer{
+                    color: white;
+                    border-radius: 10px;
+                    padding: 15px 15px;
+                    text-align: center;
+                    cursor: pointer;
+                    background-color: #4C4A4A;
+                
+                    &:hover{
+                        background-color: #353232;
+                        color: red;
+                    }
+                }
+            
+                .af-row{
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    .genre{
+                        text-decoration-line: underline;
+                        transition: color 0.3s;
+                        cursor: pointer;
+                    
+                        &:hover{
+                            color: red;
+                        }
+                    }
+
+                    .age{
+                        display: flex;
+                        flex-direction: column;
+                        align-content: flex-start;
+                        .age-target{
+                            display: none;
+                            position: absolute;
+                            border-radius: 10px;
+                            padding: 20px 20px;
+                            margin: 25px 135px 25px 0px;
+                            background-color: white;
+                            color: black;
+                            font-size: 14px;
+                            text-align: center;
+                    
+                            &:after {
+                                content: ''; 
+                                position: absolute;
+                                bottom: 53px; 
+                                right: 50%;
+                                border: 10px solid transparent;
+                                border-bottom: 10px solid white;
+                               }
+                        }
+                    
+                        &:hover{
+                            .age-target{
+                                display: block;
+                            }
+                        }
+                    
+                    }
+                
+                    .af-cell{
+                        width: 132px;
+                        height: 17px;
+                        margin-right: 20px;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        font-size: 17px;
+                    }
+                    
+                    .af-cell-info{
+                        display: flex;
+                        width: 175px;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        font-size: 14px;
+                        word-break: normal;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+                
+                }
+            }
+        }
+        }
+
+    }
+
+    .reg-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #323231;
+        border-radius: 15px;
+        padding: 20px 20px;
+        margin-left: 25px;
+        color: white;
+
+        .reg-title{
+            font-size: 32px;
+            text-align: center;
+            margin-top: 31px;
+            margin-bottom: 23px;
+        }
+
+        .first-block{
+            font-size: 21px;
+            margin-bottom: 35px; 
+            width:90%;  
+
+            .reg-table-title{
+                display: flex;
+                margin-bottom: 35px;
+            }
+            
+            .reg-duration{
+                display: flex;
+                margin-right: auto;
+
+                .buy-select{
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    border: none;
+                    position: relative;
+                    outline: none;
+                    padding: 5px;
+                    padding-right: 40px;
+                    background: url(../../assets/img/ico/arrow-down-white.png);
+                    background-position: right 13px top 50%;
+                    background-size: 15px;
+                    background-repeat: no-repeat;
+                    color: white;
+                    font-size: 19px;
+                }
+
+                .reg-date{
+    display: flex;
+    width: 230px;
+    height: 35px;
+    background-color: #4D4A4A;
+    border-radius: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-bottom: 35px;
+}
+            }
+
+            .place-block{
+                background-color: #4C4A4A;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border-radius: 10px;
+
+                .line-cinema{
+                    display: flex;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    justify-content: center;
+                    align-items: center;
+                
+                    .text{
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        font-size: 27px;
+                    }
+                
+                    .line{
+                        width: 20%;
+                        height: 2px;
+                        background-color: #E0E0E0;
+                    }
+                }
+                
+                .help-panel{
+                    display: flex;
+                    justify-content: center;
+                    font-size: 16px;
+
+                    .h-p-cell{
+                        display: flex;
+                        margin-right: 20px;
+                        margin-left: 20px;
+                    
+                        .radio-ex{
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 100%;
+                            margin-right: 5px;
+                        }
+                    
+                        .panel-exemple-blue{
+                        background-color: #2E91D9;
+                    }
+                    
+                    .panel-exemple-red{
+                        background-color: #d92e2e;
+                    }
+                    
+                    .panel-exemple-grey{
+                        background-color: #A5A5A5;
+                    }
+                    }
+                }
+
+                .ticket-place{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 17px;
+                    margin: 15px 0;
+                
+                    .t-row{
+                        display: flex;
+                    
+                        .t-cell{
+                            display: flex;
+                
+                            input{
+                                display: none;
+                                &:checked ~ .radio-button-default, &:checked ~ .radio-button-premium{
+                                    .point{
+                                        display: block;
+                                    }
+                                }
+                            }
+                           
+                            .radio-button-default{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #2e91d9;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                margin: 10px 10px;
+                                cursor: pointer;
+                
+                                .point{
+                                    display: none;
+                                    width: 12px;
+                                    height: 12px;
+                                    background-color: #1d5b88;
+                                    border-radius: 100%;
+                                }
+                
+                               &:hover{
+                                background-color: #1f608f;
+                                    .point{
+                                        display: block;
+                                        background-color: #154263;
+                                    }
+                               }
+                            }
+                
+                            .radio-button-premium{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #d92e2e;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                margin: 10px 10px;
+                                cursor: pointer;
+                
+                                .point{
+                                    display: none;
+                                    width: 12px;
+                                    height: 12px;
+                                    background-color: #881d1d;
+                                    border-radius: 100%;
+                                }
+                
+                               &:hover{
+                                background-color: #8f1f1f;
+                                    .point{
+                                        display: block;
+                                        background-color: #631515;
+                                    }
+                               }
+                            }
+                
+                            .radio-button-grey{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #A5A5A5;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                margin: 10px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tickets-block{
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                background-color: #4D4A4A;
+                padding: 15px;
+                margin-top: 20px;
+        
+                h2{
+                    margin:0px;
+                }
+        
+                .cost{
+                    display: flex;
+                    justify-content:space-between;
+                }
+        
+                .button-buy{
+                    display: flex;
+                    margin: 0 auto;
+                    justify-content: center;
+                    padding: 10px 10px;
+                    color: white;
+                    background-color: red;
+                    border-radius: 8px;
+                    cursor: pointer;
+        
+                    div{
+                        padding: 3px;
+                    }
+        
+                    &:hover{
+                        background-color: rgb(199, 0, 0);
+                    }
+                }
+        
+                .ticket{
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 10px;
+                    background-color: #323231;
+                    margin: 10px;
+                    padding: 10px;
+                    flex-wrap: wrap;
+        
+        
+                    div{
+                        color: white;
+                        font-size: 16px;
+                        margin: 2px 0;
+                    }
+        
+                    .film-name{
+                        color: white;
+                        font-size: 18px;
+                        margin-bottom: 7px;
+                    }
+                    .qr-code{
+                        align-self: flex-end;
+                        position: absolute; 
+                        div{
+                            margin: 0 0 auto 15px;
+                        }
+        
+                        img{
+                            width:80px;
+                            height:80px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+option{
+    background-color: #4D4A4A;
+    font-size: 15px;
+    color: white;
+}
+
+
+
+
+//окно Трейлера
+.trailer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.panel-nav{
+    display: flex;
+    color: white;
+    background-color: #4C4A4A;
+    width:100%;
+    padding: 10px 0px 10px 0px;
+    margin:60px 0 0 0;
+    text-align: start;
+    align-items: center;
+
+    .panel-nav-filmname{
+        display:flex;
+        margin-left: 100px;
+        align-items: center;
+    }
+    
+
+    .right-arrow{
+        width: 10px;
+        height: 10px;
+        margin: 0 10px;
+    }
+    .block-exit{
+        display: flex;
+        margin: 0 100px 0 auto;
+        align-items: center;
+
+        .background-exit{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            background-color:#323231;
+            border-radius: 100%;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+
+            &:hover{
+                background-color: red;
+            }
+    
+            .exit{
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}
+
+.videoplayer{
+    margin: 20px 0 0 0;
+    align-self: center;
+}
+
+// /*Оформление билета на фильм не в прокате*/
+
+// .active-new-film{
+//     display: flex;
+//     margin-top: 50px;
+//     margin-bottom: 50px;
+//     margin-left: 80px;
+//     display: flex;
+//     width: 1200px;
+//     flex-wrap: wrap;
+// }
+
+// .title-new-film{
+//     font-size: 30px; 
+//     margin-top: 10px; 
+//     margin-bottom: 10px
+// }
+
+// .n-f-text{
+//     display: flex;
+//     flex-direction: column;
+//     align-items:flex-start;
+// }
+
+// .n-f-sell-text{
+//     margin-top: 20px;
+//     font-size: 25px;
+// }
+
+// .new-film-form{
+//     all: unset;
+//     width: 300px;
+//     border-bottom:1px solid;
+//     margin-top: 30px;
+// }
+
+// .button-alert{
+//     background-color: red;
+//     margin-top: 30px;
+//     height: 30px;
+// }
+
+// .sub-rows{
+//     display: flex;
+//     flex-direction: column;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// /*Новые фильмы*/
+
+// .new-films{
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+// }
+
+// .new-film{
+//     width: 240px;
+//     height: 360px;
+//     margin-right: 25px;
+//     margin-left: 25px;
+//     margin-top: 50px;
+// }
+
+
+// /*Жанры*/
+
+.genre-id{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster{
+    display: flex;
+    min-height: 384px;
+    min-width: auto;
+    border-radius: 0 0 6px 6px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.comma{
+    font-size: 22px;
+}
+
+.genre-text{
+    font-size: 30px;
+    text-transform: uppercase;
+    z-index: 3;
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+.name-genre{
+    font-size: 50px;
+    margin: auto;
+}
+
+form{
+    display: block;
+}
+
+.genre-films{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #323231;
+    align-items: center;
+    margin-bottom: 50px;
+    
+}
+
+.genre-film{
+    display: flex;
+    flex-direction: column;
+}
+
+.genre-film-name{
+    color: white;
+}
+
+.genre-active-film{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.genre-promotext{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 100px;
+}
+
+// /*Админ-форма добавления фильма*/
+
+// .film_add_main{
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 100px;
+// }
+
+// .form_add_film{
+//     display: flex;
+//     flex-direction: column;
+//     width: 300px;
+//     height: auto;
+// }
+
+// .film_add_back{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     background-color: #323231;
+//     width: 600px;
+//     height: auto;
+//     border-radius: 10px;
+//     margin: 0 50px;
+// }
+
+// .input-block{
+//     display: flex;
+//     flex-direction: column;
+//     margin: 15px 0 15px 0;
+// }
+
+// label{
+//     margin-bottom: 15px;
+// }
+
+// input[type=submit]{
+//     cursor: pointer;
+// }
+
+// /*Список жанров*/
+
+.back-list-genre{
+    display: flex;
+    width: 99%;
+    justify-content: center;
+    margin-top: 85px;
+    flex-wrap: wrap;
+}
+
+.block-genre{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: color 0.3s;
+}
+
+.block-genre:hover{
+    color: red;
+}
+
+.genre-poster{
+    width: 310px;
+    height: 220px;
+    border-radius: 8px;
+    margin: 0 10px 20px 10px;
+}
+
+.back-black img{
+    background-size: cover;
+}
+
+.back-black:hover{
+    filter: brightness(55%);
+    cursor: pointer;
+    transition: filter 0.5s;
+}
+
+
+.genre-name{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.g{
+    color: white; 
+    font-size: 20px;
+    text-decoration: underline dotted;
+}
+
+.g:hover{
+    color: red;
+    transition: color 0.3s;
+}
+
+//Профиль
+.background-profile{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    background-color: #323231;
+    width: 90%;
+    margin: 100px auto 0 auto;
+    border-radius: 10px;
+
+
+    .profile-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        background-color: #4D4A4A;
+        width: 35%;
+        margin: 25px 0 25px 25px;
+
+
+
+        .avatar{
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            margin: 50px 0 0 0;
+
+                img{
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .ava{
+                    position: absolute;
+                    cursor: pointer;
+                    width: 15px;
+                    height: 15px;
+                    margin-left: 50px;
+                }
+
+        }
+
+        .text{
+            display:flex;
+            flex-direction: column;
+            color: white;
+
+            div{
+                padding: 10px 20px;
+                text-align: center;
+                background-color: #323231;
+                border-radius: 10px;
+                margin: 10px 0;
+                flex-wrap: wrap;
+
+                img{
+                    position: absolute;
+                    cursor: pointer;
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+
+    .tickets-block{
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: #4D4A4A;
+        width: 55%;
+        margin: 25px 25px 25px 0px;
+
+        .ticket{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #323231;
+            margin: 10px;
+            padding: 10px;
+            flex-wrap: wrap;
+
+
+            div{
+                color: white;
+                font-size: 16px;
+                margin: 2px 0;
+            }
+
+            .film-name{
+                color: white;
+                font-size: 18px;
+                margin-bottom: 7px;
+            }
+            .qr-code{
+                align-self: flex-end;
+                position: absolute; 
+                div{
+                    margin: 0 0 auto 15px;
+                }
+
+                img{
+                    width:80px;
+                    height:80px;
+                }
+            }
+        }
+    }
+}
